@@ -29,6 +29,11 @@ const kAuthSubHeadingTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   color: AppColors.white,
 );
+const kOrangeTextStyle = TextStyle(
+  fontWeight: FontWeight.w400,
+  fontSize: 12,
+  color: AppColors.orange,
+);
 kBackgroundImage(ImageProvider appImages) => BoxDecoration(
       image: DecorationImage(image: appImages, fit: BoxFit.fill),
     );

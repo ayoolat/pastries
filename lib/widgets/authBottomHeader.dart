@@ -28,10 +28,7 @@ class AuthBottomHeader extends StatelessWidget {
           onTap: onTap,
           child: Text(
             actionText,
-            style: const TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 12,
-                color: AppColors.orange),
+            style: kOrangeTextStyle,
           ),
         ),
       ],

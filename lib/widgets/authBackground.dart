@@ -11,9 +11,12 @@ class authBackground extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: SizedBox(
         width: double.infinity,
-        height: double.infinity,
-        child: Stack(
-          children: children,
+        height: 500,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Stack(
+            children: children,
+          ),
         ),
       ),
     );

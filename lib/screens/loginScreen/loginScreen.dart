@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../routes.dart';
 import '../../utils/config/colors.dart';
-import '../../utils/config/images.dart';
 import '../../utils/constants.dart';
 import '../../widgets/authBackground.dart';
 import '../../widgets/authBottomHeader.dart';
@@ -13,9 +12,7 @@ import '../../widgets/inputField.dart';
 import '../../widgets/stretchedButton.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
-
-  get kAuthMainHeadingTextSyle => null;
+  bool hidePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +35,7 @@ class LoginScreen extends StatelessWidget {
           ],
         ),
         AuthInputsSection(
+          topPadding: 80,
           heightFactor: 0.585,
           children: [
             const AuthTextField(
@@ -46,10 +44,10 @@ class LoginScreen extends StatelessWidget {
               obscureText: false,
             ),
             const SizedBox(height: 10),
-            const AuthTextField(
-              icon: Icon(Icons.remove_red_eye_rounded),
+            AuthTextField(
+              icon: _toogglePasswordObscurity(),
               hintText: 'Password',
-              obscureText: true,
+              obscureText: hidePassword,
             ),
             const SizedBox(height: 8),
             TextButton(
@@ -91,5 +89,21 @@ class LoginScreen extends StatelessWidget {
         )
       ],
     );
+  }
+
+  Widget _toogglePasswordObscurity() {
+    return !hidePassword
+        ? GestureDetector(
+            onTap: () {
+              hidePassword = true;
+            },
+            child: const Text('Hide password'),
+          )
+        : GestureDetector(
+            onTap: () {
+              hidePassword = false;
+            },
+            child: const Icon(Icons.remove_red_eye_rounded),
+          );
   }
 }

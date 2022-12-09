@@ -30,7 +30,7 @@ class AppNavigator {
   static Route onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case _Paths.login:
-        return FadeRoute(page: const LoginScreen());
+        return FadeRoute(page: LoginScreen());
       case _Paths.onBoard:
         return FadeRoute(page: const OnBoardingScreen());
       case _Paths.register:

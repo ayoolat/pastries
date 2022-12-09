@@ -34,6 +34,7 @@ class RegisterScreen extends StatelessWidget {
           ],
         ),
         AuthInputsSection(
+          topPadding: 50,
           heightFactor: 0.685,
           children: [
             const AuthTextField(

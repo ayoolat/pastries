@@ -5,8 +5,12 @@ import '../utils/config/colors.dart';
 class AuthInputsSection extends StatelessWidget {
   final List<Widget> children;
   final double heightFactor;
+  final double topPadding;
   const AuthInputsSection(
-      {Key? key, required this.children, required this.heightFactor})
+      {Key? key,
+      required this.children,
+      required this.heightFactor,
+      required this.topPadding})
       : super(key: key);
 
   @override
@@ -25,7 +29,7 @@ class AuthInputsSection extends StatelessWidget {
             color: AppColors.white,
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(25, 80, 25, 20),
+            padding: EdgeInsets.fromLTRB(25, topPadding, 25, 20),
             child: Column(
               children: children,
             ),
