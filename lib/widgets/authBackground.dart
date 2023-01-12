@@ -7,13 +7,11 @@ class authBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: SizedBox(
-        width: double.infinity,
-        height: 500,
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
+    return Material(
+      child: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height + 150,
+          width: MediaQuery.of(context).size.width,
           child: Stack(
             children: children,
           ),
