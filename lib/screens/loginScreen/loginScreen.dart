@@ -66,11 +66,11 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: StretchedButton(
                 onPressed: () {
-                  print('');
+                  AppNavigator.push(Routes.Dashboard);
                 },
                 text: 'Log In',
               ),
