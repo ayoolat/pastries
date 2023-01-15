@@ -39,6 +39,26 @@ const kDashboardHeading = TextStyle(
   fontWeight: FontWeight.w400,
   color: AppColors.textGrey,
 );
+const kCakeCardHeading = TextStyle(
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+);
+const kCakeCardBody = TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.w300,
+  color: Colors.white,
+);
+const kCakeCardPrice = TextStyle(
+  fontSize: 13,
+  fontWeight: FontWeight.w500,
+  color: Colors.white,
+);
+const kCakeCardButton = TextStyle(
+  fontSize: 10,
+  fontWeight: FontWeight.w500,
+  color: Colors.orange,
+);
 kBackgroundImage(ImageProvider appImages) => BoxDecoration(
       image: DecorationImage(image: appImages, fit: BoxFit.fill),
     );

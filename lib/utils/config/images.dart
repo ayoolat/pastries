@@ -13,6 +13,7 @@ class AppImages {
   static const dashboardImage1 = _Image('chocolateCakeImage.png');
   static const dashboardImage2 = _Image('vanillaCakeImage.png');
   static const newThisWeek = _Image('authBackground.png');
+  static const heartIcon = _Image('heartIcon.png');
   static const bestSeller = _Image('authBackground.png');
   static const cheapTrills = _Image('authBackground.png');
   static const combinedMixtures = _Image('authBackground.png');
@@ -21,5 +22,8 @@ class AppImages {
     await precacheImage(background, context);
     await precacheImage(logo, context);
     await precacheImage(authBackground, context);
+    await precacheImage(dashboardImage1, context);
+    await precacheImage(dashboardImage2, context);
+    await precacheImage(heartIcon, context);
   }
 }

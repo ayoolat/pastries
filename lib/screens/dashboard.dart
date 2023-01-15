@@ -2,8 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pastries/utils/config/colors.dart';
 
+import '../utils/config/images.dart';
 import '../utils/constants.dart';
 import '../widgets/CategoriesNavitionBar.dart';
+import '../widgets/MainCakeCard.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -125,14 +127,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    height: 283,
-                    width: 210,
-                  )
-                ],
-              )
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: const [
+                    MainCakeCard(
+                      image: AppImages.dashboardImage1,
+                      heading: "Chocolate Berries Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
+                    ),
+                    MainCakeCard(
+                      image: AppImages.dashboardImage2,
+                      heading: "Vanilla Crunchy Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         ),
