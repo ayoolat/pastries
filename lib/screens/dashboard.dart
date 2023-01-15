@@ -148,6 +148,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   ],
                 ),
               ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Explore from categories",
+                  style: kSubDashboardHeading,
+                ),
+              )
             ],
           ),
         ),

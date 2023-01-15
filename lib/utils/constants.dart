@@ -59,6 +59,10 @@ const kCakeCardButton = TextStyle(
   fontWeight: FontWeight.w500,
   color: Colors.orange,
 );
+const kSubDashboardHeading = TextStyle(
+  fontWeight: FontWeight.w600,
+  fontSize: 25,
+);
 kBackgroundImage(ImageProvider appImages) => BoxDecoration(
       image: DecorationImage(image: appImages, fit: BoxFit.fill),
     );
