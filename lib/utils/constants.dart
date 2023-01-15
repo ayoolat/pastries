@@ -34,6 +34,11 @@ const kOrangeTextStyle = TextStyle(
   fontSize: 12,
   color: AppColors.orange,
 );
+const kDashboardHeading = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w400,
+  color: AppColors.textGrey,
+);
 kBackgroundImage(ImageProvider appImages) => BoxDecoration(
       image: DecorationImage(image: appImages, fit: BoxFit.fill),
     );
