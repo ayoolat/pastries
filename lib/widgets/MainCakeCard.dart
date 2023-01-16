@@ -6,24 +6,28 @@ import '../utils/config/images.dart';
 import '../utils/constants.dart';
 
 class MainCakeCard extends StatelessWidget {
+  double height;
+  double? width;
   final AssetImage image;
   final String heading;
   final String price;
   final String body;
-  const MainCakeCard(
-      {Key? key,
-      required this.image,
-      required this.heading,
-      required this.body,
-      required this.price})
-      : super(key: key);
+  MainCakeCard({
+    Key? key,
+    required this.image,
+    required this.heading,
+    required this.body,
+    required this.price,
+    this.width,
+    required this.height,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(right: 20.0, bottom: 16),
-      height: 283,
-      width: 210,
+      height: height,
+      width: width,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: image,

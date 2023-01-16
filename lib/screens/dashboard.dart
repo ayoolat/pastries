@@ -6,6 +6,7 @@ import '../utils/config/images.dart';
 import '../utils/constants.dart';
 import '../widgets/CategoriesNavitionBar.dart';
 import '../widgets/MainCakeCard.dart';
+import '../widgets/dashboardHeading.dart';
 import '../widgets/exploreCardsOrder.dart';
 
 class DashboardScreen extends StatefulWidget {
@@ -132,13 +133,15 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
-                    children: const [
+                    children: [
                       MainCakeCard(
                         image: AppImages.dashboardImage1,
                         heading: "Chocolate Berries Cake",
                         price: "₦ 23,699",
                         body:
                             "A kick well chocolate cake for all with nice berries.",
+                        height: 283,
+                        width: 210,
                       ),
                       MainCakeCard(
                         image: AppImages.dashboardImage2,
@@ -146,6 +149,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         price: "₦ 23,699",
                         body:
                             "A kick well chocolate cake for all with nice berries.",
+                        height: 283,
+                        width: 210,
                       )
                     ],
                   ),
@@ -153,12 +158,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 const SizedBox(
                   height: 30,
                 ),
-                const Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Explore from categories",
-                    style: kSubDashboardHeading,
-                  ),
+                const DashboardHeadings(
+                  text: "Explore from categories",
                 ),
                 const SizedBox(
                   height: 20,
@@ -184,6 +185,42 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       image2: AppImages.dashboardImage1,
                       text2: "Combined Mixtures",
                     )
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                const DashboardHeadings(
+                  text: "Random Exploration",
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      flex: 1,
+                      child: MainCakeCard(
+                        image: AppImages.dashboardImage1,
+                        heading: "Chocolate Berries Cake",
+                        price: "₦ 23,699",
+                        body:
+                            "A kick well chocolate cake for all with nice berries.",
+                        height: 199,
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: MainCakeCard(
+                        image: AppImages.dashboardImage1,
+                        heading: "Chocolate Berries Cake",
+                        price: "₦ 23,699",
+                        body:
+                            "A kick well chocolate cake for all with nice berries.",
+                        height: 199,
+                      ),
+                    ),
                   ],
                 )
               ],
