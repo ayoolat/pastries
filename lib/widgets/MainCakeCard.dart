@@ -21,7 +21,7 @@ class MainCakeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(right: 20.0),
+      margin: const EdgeInsets.only(right: 20.0, bottom: 16),
       height: 283,
       width: 210,
       decoration: BoxDecoration(
@@ -32,6 +32,14 @@ class MainCakeCard extends StatelessWidget {
         borderRadius: const BorderRadius.all(
           Radius.circular(17),
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.15),
+            spreadRadius: 3,
+            blurRadius: 6,
+            offset: const Offset(3, 3),
+          ),
+        ],
       ),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
