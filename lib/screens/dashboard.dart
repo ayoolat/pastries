@@ -8,6 +8,7 @@ import '../widgets/CategoriesNavitionBar.dart';
 import '../widgets/MainCakeCard.dart';
 import '../widgets/dashboardHeading.dart';
 import '../widgets/exploreCardsOrder.dart';
+import '../widgets/randomExplorationCard.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({Key? key}) : super(key: key);
@@ -140,8 +141,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         price: "₦ 23,699",
                         body:
                             "A kick well chocolate cake for all with nice berries.",
-                        height: 283,
-                        width: 210,
                       ),
                       MainCakeCard(
                         image: AppImages.dashboardImage2,
@@ -149,8 +148,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                         price: "₦ 23,699",
                         body:
                             "A kick well chocolate cake for all with nice berries.",
-                        height: 283,
-                        width: 210,
                       )
                     ],
                   ),
@@ -196,33 +193,48 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Flexible(
-                      flex: 1,
-                      child: MainCakeCard(
-                        image: AppImages.dashboardImage1,
-                        heading: "Chocolate Berries Cake",
-                        price: "₦ 23,699",
-                        body:
-                            "A kick well chocolate cake for all with nice berries.",
-                        height: 199,
-                      ),
+                Wrap(
+                  direction: Axis.horizontal,
+                  children: const [
+                    RandomExplorationCard(
+                      image: AppImages.dashboardImage1,
+                      heading: "Chocolate Berries Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
                     ),
-                    Flexible(
-                      flex: 1,
-                      child: MainCakeCard(
-                        image: AppImages.dashboardImage1,
-                        heading: "Chocolate Berries Cake",
-                        price: "₦ 23,699",
-                        body:
-                            "A kick well chocolate cake for all with nice berries.",
-                        height: 199,
-                      ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RandomExplorationCard(
+                      image: AppImages.dashboardImage1,
+                      heading: "Chocolate Berries Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RandomExplorationCard(
+                      image: AppImages.dashboardImage1,
+                      heading: "Chocolate Berries Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    RandomExplorationCard(
+                      image: AppImages.dashboardImage1,
+                      heading: "Chocolate Berries Cake",
+                      price: "₦ 23,699",
+                      body:
+                          "A kick well chocolate cake for all with nice berries.",
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
