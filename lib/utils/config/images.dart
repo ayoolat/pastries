@@ -17,6 +17,8 @@ class AppImages {
   static const bestSeller = _Image('authBackground.png');
   static const cheapTrills = _Image('authBackground.png');
   static const combinedMixtures = _Image('authBackground.png');
+  static const filterIcon = _Image('filterIcon.png');
+  static const emptyCartImage = _Image('emptyCartImage.png');
 
   static Future precacheAssets(BuildContext context) async {
     await precacheImage(background, context);
@@ -25,5 +27,7 @@ class AppImages {
     await precacheImage(dashboardImage1, context);
     await precacheImage(dashboardImage2, context);
     await precacheImage(heartIcon, context);
+    await precacheImage(filterIcon, context);
+    await precacheImage(emptyCartImage, context);
   }
 }

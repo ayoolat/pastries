@@ -63,6 +63,12 @@ const kSubDashboardHeading = TextStyle(
   fontWeight: FontWeight.w600,
   fontSize: 25,
 );
+BoxShadow kShadow = BoxShadow(
+  color: Colors.black.withOpacity(0.15),
+  spreadRadius: 3,
+  blurRadius: 6,
+  offset: const Offset(3, 3),
+);
 kBackgroundImage(ImageProvider appImages) => BoxDecoration(
       image: DecorationImage(image: appImages, fit: BoxFit.fill),
     );
