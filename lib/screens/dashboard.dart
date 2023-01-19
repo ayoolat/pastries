@@ -1,11 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hidable/hidable.dart';
 import 'package:pastries/utils/config/colors.dart';
+import 'package:scroll_to_hide_bottom_navigation_bar/scroll_to_hide_bottom_navigation_bar.dart';
 
+import '../routes.dart';
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
 import '../widgets/CategoriesNavitionBar.dart';
 import '../widgets/MainCakeCard.dart';
+import '../widgets/bottomNav.dart';
 import '../widgets/dashboardHeading.dart';
 import '../widgets/exploreCardsOrder.dart';
 import '../widgets/randomExplorationCard.dart';
@@ -18,13 +22,29 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  int _selectedIndex = 0;
+  ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    _scrollController = ScrollController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
+        controller: _scrollController,
         scrollDirection: Axis.vertical,
-        child: Container(
+        child: SizedBox(
           width: double.infinity,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
@@ -239,6 +259,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ),
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNav(
+        scrollController: _scrollController,
+        selectedIndex: _selectedIndex,
       ),
     );
   }

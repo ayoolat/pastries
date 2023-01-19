@@ -128,6 +128,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  hidable:
+    dependency: "direct main"
+    description:
+      name: hidable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.3"
   http:
     dependency: "direct main"
     description:
@@ -296,6 +303,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.27.7"
+  scroll_to_hide_bottom_navigation_bar:
+    dependency: "direct main"
+    description:
+      name: scroll_to_hide_bottom_navigation_bar
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   sky_engine:
     dependency: transitive
     description: flutter
