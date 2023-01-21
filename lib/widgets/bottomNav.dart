@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pastries/routes.dart';
+import 'package:pastries/utils/config/images.dart';
 import 'package:scroll_to_hide_bottom_navigation_bar/scroll_to_hide_bottom_navigation_bar.dart';
 
 import '../utils/config/colors.dart';
@@ -25,38 +26,38 @@ class BottomNav extends StatelessWidget {
         BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_outlined,
+              icon: ImageIcon(
+                AppImages.homeIcon,
               ),
               label: 'Home',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
+              icon: ImageIcon(
+                AppImages.searchIcon,
               ),
               label: 'Search',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.grid_view,
+              icon: ImageIcon(
+                AppImages.gridIcon,
               ),
               label: 'Grid',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.shopping_cart_outlined,
+              icon: ImageIcon(
+                AppImages.cartIcon,
               ),
               label: 'Cart',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
+              icon: ImageIcon(
+                AppImages.profileIcon,
               ),
-              label: 'Cart',
+              label: 'person',
               backgroundColor: AppColors.white,
             ),
           ],
@@ -70,9 +71,9 @@ class BottomNav extends StatelessWidget {
             fontSize: 12,
             fontWeight: FontWeight.w500,
           ),
-          unselectedIconTheme: const IconThemeData(
-            color: AppColors.textGrey,
-          ),
+          type: BottomNavigationBarType.fixed,
+          unselectedIconTheme:
+              const IconThemeData(color: AppColors.textGrey, size: 18),
           onTap: (index) {
             print(index);
             switch (index) {

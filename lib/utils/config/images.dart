@@ -19,6 +19,11 @@ class AppImages {
   static const combinedMixtures = _Image('authBackground.png');
   static const filterIcon = _Image('filterIcon.png');
   static const emptyCartImage = _Image('emptyCartImage.png');
+  static const homeIcon = _Image('homeIcon.png');
+  static const searchIcon = _Image('searchIcon.png');
+  static const gridIcon = _Image('gridIcon.png');
+  static const cartIcon = _Image('cartIcon.png');
+  static const profileIcon = _Image('profileIcon.png');
 
   static Future precacheAssets(BuildContext context) async {
     await precacheImage(background, context);
@@ -29,5 +34,10 @@ class AppImages {
     await precacheImage(heartIcon, context);
     await precacheImage(filterIcon, context);
     await precacheImage(emptyCartImage, context);
+    await precacheImage(homeIcon, context);
+    await precacheImage(searchIcon, context);
+    await precacheImage(gridIcon, context);
+    await precacheImage(cartIcon, context);
+    await precacheImage(profileIcon, context);
   }
 }
