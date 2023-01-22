@@ -18,6 +18,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   hidable: ^1.0.3
   scroll_to_hide_bottom_navigation_bar: ^0.0.1
+  flutter_svg: ^1.1.5
 
 dev_dependencies:
   flutter_test:

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pastries/routes.dart';
 import 'package:pastries/utils/config/images.dart';
 import 'package:scroll_to_hide_bottom_navigation_bar/scroll_to_hide_bottom_navigation_bar.dart';
@@ -24,39 +25,29 @@ class BottomNav extends StatelessWidget {
       duration: const Duration(milliseconds: 1000),
       children: [
         BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AppImages.homeIcon,
-              ),
+              icon: SvgPicture.asset("images/homeIcon.svg"),
               label: 'Home',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AppImages.searchIcon,
-              ),
+              icon: SvgPicture.asset("images/searchIcon.svg"),
               label: 'Search',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AppImages.gridIcon,
-              ),
+              icon: SvgPicture.asset("images/gridIcon.svg"),
               label: 'Grid',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AppImages.cartIcon,
-              ),
+              icon: SvgPicture.asset("images/cartIcon.svg"),
               label: 'Cart',
               backgroundColor: AppColors.white,
             ),
             BottomNavigationBarItem(
-              icon: ImageIcon(
-                AppImages.profileIcon,
-              ),
+              icon: SvgPicture.asset("images/profileIcon.svg"),
               label: 'person',
               backgroundColor: AppColors.white,
             ),
@@ -70,10 +61,10 @@ class BottomNav extends StatelessWidget {
           selectedLabelStyle: const TextStyle(
             fontSize: 12,
             fontWeight: FontWeight.w500,
+            color: AppColors.orange,
           ),
-          type: BottomNavigationBarType.fixed,
           unselectedIconTheme:
-              const IconThemeData(color: AppColors.textGrey, size: 18),
+              const IconThemeData(color: AppColors.textGrey, size: 10),
           onTap: (index) {
             print(index);
             switch (index) {
