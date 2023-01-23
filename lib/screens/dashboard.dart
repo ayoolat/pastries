@@ -195,10 +195,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       height: 20,
                     ),
                     ExploreCardsOrder(
-                      item1: 1,
+                      item1: 2,
                       image1: AppImages.dashboardImage1,
                       text1: "Cheap Trills",
-                      item2: 3,
+                      item2: 4,
                       image2: AppImages.dashboardImage1,
                       text2: "Combined Mixtures",
                     )

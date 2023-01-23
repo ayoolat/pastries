@@ -35,7 +35,7 @@ class ExploreCardsOrder extends StatelessWidget {
           width: 20,
         ),
         Flexible(
-          flex: 2,
+          flex: item2,
           child: ExploreCard(
             image: image2,
             text: text2,

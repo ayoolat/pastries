@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/config/colors.dart';
+import '../utils/constants.dart';
 
 class ExploreCard extends StatelessWidget {
   final AssetImage image;
@@ -24,14 +25,7 @@ class ExploreCard extends StatelessWidget {
               image: image,
               fit: BoxFit.fitWidth,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                spreadRadius: 3,
-                blurRadius: 6,
-                offset: const Offset(3, 0),
-              ),
-            ],
+            boxShadow: [kShadow],
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(17),
               topRight: Radius.circular(17),
@@ -46,14 +40,7 @@ class ExploreCard extends StatelessWidget {
               bottomRight: Radius.circular(17),
             ),
             color: AppColors.white,
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.15),
-                spreadRadius: 3,
-                blurRadius: 6,
-                offset: const Offset(3, 3),
-              ),
-            ],
+            boxShadow: [kShadow],
           ),
           child: Align(
             alignment: Alignment.center,

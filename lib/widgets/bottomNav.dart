@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:pastries/routes.dart';
-import 'package:pastries/utils/config/images.dart';
 import 'package:scroll_to_hide_bottom_navigation_bar/scroll_to_hide_bottom_navigation_bar.dart';
 
 import '../utils/config/colors.dart';
@@ -11,6 +10,7 @@ class BottomNav extends StatelessWidget {
   final ScrollController scrollController;
   int selectedIndex = 0;
   final String? pageName;
+
   BottomNav({
     required this.scrollController,
     required this.selectedIndex,
@@ -66,13 +66,15 @@ class BottomNav extends StatelessWidget {
           unselectedIconTheme:
               const IconThemeData(color: AppColors.textGrey, size: 10),
           onTap: (index) {
-            print(index);
             switch (index) {
               case 0:
                 AppNavigator.push(Routes.Dashboard);
                 return;
               case 1:
                 AppNavigator.push(Routes.Search);
+                return;
+              case 2:
+                AppNavigator.push(Routes.Categories);
                 return;
             }
           },
