@@ -23,7 +23,7 @@ class ExploreCard extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: image,
-              fit: BoxFit.fitWidth,
+              fit: BoxFit.fill,
             ),
             boxShadow: [kShadow],
             borderRadius: const BorderRadius.only(
@@ -35,10 +35,7 @@ class ExploreCard extends StatelessWidget {
         Container(
           height: 27,
           decoration: BoxDecoration(
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(17),
-              bottomRight: Radius.circular(17),
-            ),
+            borderRadius: kBoxRadius,
             color: AppColors.white,
             boxShadow: [kShadow],
           ),

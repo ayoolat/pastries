@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pastries/screens/cartScreen.dart';
 import 'package:pastries/screens/categoriesScreen.dart';
 import 'package:pastries/screens/dashboard.dart';
 import 'package:pastries/screens/loginScreen/loginScreen.dart';
@@ -9,7 +10,16 @@ import 'package:pastries/screens/searchScreen.dart';
 
 import 'core/fadePageRoute.dart';
 
-enum Routes { Login, Register, OnBoard, OTP, Dashboard, Search, Categories }
+enum Routes {
+  Login,
+  Register,
+  OnBoard,
+  OTP,
+  Dashboard,
+  Search,
+  Categories,
+  Cart
+}
 
 class _Paths {
   static const String login = '/login';
@@ -18,7 +28,8 @@ class _Paths {
   static const String otp = '/otp';
   static const String dashboard = '/dashboard';
   static const String search = '/search';
-  static const String categories = '/categoriesScreen';
+  static const String categories = '/categories';
+  static const String cart = '/cart';
 
   static const Map<Routes, String> _pathMap = {
     Routes.OnBoard: onBoard,
@@ -28,6 +39,7 @@ class _Paths {
     Routes.Dashboard: dashboard,
     Routes.Search: search,
     Routes.Categories: categories,
+    Routes.Cart: cart,
   };
 
   static String of(Routes route) => _pathMap[route] ?? onBoard;
@@ -52,6 +64,8 @@ class AppNavigator {
         return FadeRoute(page: const SearchScreen());
       case _Paths.categories:
         return FadeRoute(page: const CategoriesScreen());
+      case _Paths.cart:
+        return FadeRoute(page: const CartScreen());
       default:
         return FadeRoute(page: const OnBoardingScreen());
     }
