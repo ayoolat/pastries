@@ -117,35 +117,32 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   height: 20,
                 ),
                 SingleChildScrollView(
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CategoriesNavigationText(
-                          color: AppColors.orange,
-                          text: "Cakes",
-                          icon: Icons.circle,
-                        ),
-                        CategoriesNavigationText(
-                          color: AppColors.black,
-                          text: "Creams",
-                        ),
-                        CategoriesNavigationText(
-                          color: AppColors.black,
-                          text: "Waffles",
-                        ),
-                        CategoriesNavigationText(
-                          color: AppColors.black,
-                          text: "Cup Cakes",
-                        ),
-                        CategoriesNavigationText(
-                          color: AppColors.black,
-                          text: "More Iceing",
-                        ),
-                      ],
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      CategoriesNavigationText(
+                        color: AppColors.orange,
+                        text: "Cakes",
+                        icon: Icons.circle,
+                      ),
+                      CategoriesNavigationText(
+                        color: AppColors.black,
+                        text: "Creams",
+                      ),
+                      CategoriesNavigationText(
+                        color: AppColors.black,
+                        text: "Waffles",
+                      ),
+                      CategoriesNavigationText(
+                        color: AppColors.black,
+                        text: "Cup Cakes",
+                      ),
+                      CategoriesNavigationText(
+                        color: AppColors.black,
+                        text: "More Iceing",
+                      ),
+                    ],
                   ),
                 ),
                 const SizedBox(
