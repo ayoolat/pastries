@@ -117,6 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   height: 20,
                 ),
                 SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
