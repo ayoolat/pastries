@@ -14,22 +14,25 @@ class CategoriesNavigationText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          text,
-          style: TextStyle(
-            fontWeight: FontWeight.w400,
-            fontSize: 15,
-            color: color,
+    return Padding(
+      padding: const EdgeInsets.only(right: 15.0),
+      child: Column(
+        children: [
+          Text(
+            text,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 15,
+              color: color,
+            ),
           ),
-        ),
-        Icon(
-          icon,
-          color: AppColors.orange,
-          size: 7,
-        )
-      ],
+          Icon(
+            icon,
+            color: AppColors.orange,
+            size: 7,
+          )
+        ],
+      ),
     );
   }
 }

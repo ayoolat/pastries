@@ -5,6 +5,7 @@ import 'package:pastries/widgets/bottomNav.dart';
 import '../utils/config/colors.dart';
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
+import '../widgets/CartCardWidget.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class CartScreen extends StatefulWidget {
 class _CartScreenState extends State<CartScreen> {
   int _selectedIndex = 3;
   ScrollController _scrollController = ScrollController();
+  int quantity = 0;
 
   @override
   void initState() {
@@ -40,151 +42,98 @@ class _CartScreenState extends State<CartScreen> {
           padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 20),
           child: Column(
             children: [
-              const Text("Cart", style: kSubDashboardHeading),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Text("Cart", style: kSubDashboardHeading),
+              ),
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 40,
                   ),
-                  Row(
-                    children: [
-                      Flexible(
-                        flex: 2,
-                        child: Container(
-                          height: 153,
-                          decoration: BoxDecoration(
-                            borderRadius: kBoxRadiusVerticalLeft,
-                            boxShadow: [kShadowVertical],
-                          ),
-                          child: const Image(
-                            image: AppImages.cartItem,
-                            fit: BoxFit.fill,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 3,
-                        child: Container(
-                          width: double.infinity,
-                          height: 153,
-                          decoration: BoxDecoration(
-                            borderRadius: kBoxRadiusVerticalRight,
-                            color: AppColors.white,
-                            boxShadow: [kShadow],
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                const Align(
-                                  alignment: Alignment.topRight,
-                                  child: Image(
-                                    image: AppImages.trashIcon,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                const Align(
-                                  alignment: Alignment.topLeft,
-                                  child: Text(
-                                    "Presidency Cakesy",
-                                    style: kCartCardTitle,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 8,
-                                ),
-                                const Text(
-                                  "Presidency Cakesy is all about its flavour to make sure that it has the best taste of velvet reciepies into its carisma.",
-                                  overflow: TextOverflow.ellipsis,
-                                  softWrap: true,
-                                  style: kCartCardBody,
-                                ),
-                                const SizedBox(
-                                  height: 40,
-                                ),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    const Text(
-                                      "₦34,699",
-                                      style: kCartCardTitle,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Container(
-                                          width: 20,
-                                          height: 20,
-                                          decoration: const BoxDecoration(
-                                            borderRadius:
-                                                kBoxRadiusVerticalRight,
-                                          ),
-                                          child: TextButton(
-                                            onPressed: () {},
-                                            style: const ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStatePropertyAll(
-                                                      AppColors.lighterOrange),
-                                              padding: MaterialStatePropertyAll(
-                                                  EdgeInsets.zero),
-                                            ),
-                                            child: const Icon(
-                                              Icons.add,
-                                              color: AppColors.orange,
-                                              size: 12,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 6,
-                                        ),
-                                        const Text(
-                                          "01",
-                                          style: TextStyle(
-                                            fontSize: 11,
-                                            fontWeight: FontWeight.w400,
-                                          ),
-                                        ),
-                                        const SizedBox(
-                                          width: 6,
-                                        ),
-                                        Container(
-                                          width: 20,
-                                          height: 20,
-                                          decoration: const BoxDecoration(
-                                            borderRadius:
-                                                kBoxRadiusVerticalRight,
-                                          ),
-                                          child: TextButton(
-                                            onPressed: () {},
-                                            style: const ButtonStyle(
-                                              backgroundColor:
-                                                  MaterialStatePropertyAll(
-                                                      AppColors.orange),
-                                              padding: MaterialStatePropertyAll(
-                                                  EdgeInsets.zero),
-                                            ),
-                                            child: const Icon(
-                                              Icons.horizontal_rule,
-                                              color: AppColors.white,
-                                              size: 12,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
+                  CartCardWidget(
+                    image: AppImages.cartItem,
+                    name: "Presidency Cakesy",
+                    description:
+                        "Presidency Cakesy is all about its flavour to make sure that it has the best taste of velvet reciepies into its carisma.",
+                    price: 35000,
+                    quantity: quantity,
+                  ),
+                  CartCardWidget(
+                    image: AppImages.cartItem,
+                    name: "Presidency Cakesy",
+                    description:
+                        "Presidency Cakesy is all about its flavour to make sure that it has the best taste of velvet reciepies into its carisma.",
+                    price: 35000,
+                    quantity: quantity,
+                  ),
                 ],
+              ),
+              const SizedBox(
+                height: 50,
+              ),
+              Container(
+                height: 191,
+                width: double.infinity,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+                decoration: const BoxDecoration(
+                    color: AppColors.lighterOrange,
+                    borderRadius: kBoxFullRadius),
+                child: Column(
+                  children: const [
+                    CartSummaryCard(
+                      title: "Subtotal",
+                      value: "₦34,699",
+                      titleStyle: kAuthTextStyle,
+                      valueStyle: kAuthTextStyle,
+                    ),
+                    CartSummaryCard(
+                      title: "Tax Fee",
+                      value: "₦699",
+                      titleStyle: kAuthTextStyle,
+                      valueStyle: kAuthTextStyle,
+                    ),
+                    CartSummaryCard(
+                      title: "Delivery Fee",
+                      value: "₦7,220",
+                      titleStyle: kAuthTextStyle,
+                      valueStyle: kAuthTextStyle,
+                    ),
+                    Divider(
+                      color: AppColors.orange,
+                      thickness: 1.5,
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    CartSummaryCard(
+                      title: "Total",
+                      value: "₦34,699",
+                      titleStyle: kTotalSize,
+                      valueStyle: kTotalSize,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: TextButton(
+                  onPressed: () {},
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(AppColors.orange),
+                    padding: MaterialStatePropertyAll(
+                      EdgeInsets.all(15),
+                    ),
+                  ),
+                  child: const Text(
+                    "Checkout",
+                    style: kOnBoardSmallText,
+                  ),
+                ),
               )
             ],
           ),
@@ -193,6 +142,41 @@ class _CartScreenState extends State<CartScreen> {
       bottomNavigationBar: BottomNav(
         scrollController: _scrollController,
         selectedIndex: _selectedIndex,
+      ),
+    );
+  }
+}
+
+class CartSummaryCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final TextStyle titleStyle;
+  final TextStyle valueStyle;
+
+  const CartSummaryCard({
+    required this.title,
+    required this.value,
+    required this.titleStyle,
+    required this.valueStyle,
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: titleStyle,
+          ),
+          Text(
+            value,
+            style: valueStyle,
+          )
+        ],
       ),
     );
   }

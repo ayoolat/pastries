@@ -19,6 +19,10 @@ const kAuthTextStyle = TextStyle(
   fontWeight: FontWeight.w400,
   fontSize: 12,
 );
+const kTotalSize = TextStyle(
+  fontSize: 17,
+  fontWeight: FontWeight.w600,
+);
 const kAuthMainHeadingTextStyle = TextStyle(
   fontSize: 32,
   fontWeight: FontWeight.w800,
@@ -87,6 +91,7 @@ const kBoxRadius = BorderRadius.only(
   bottomLeft: Radius.circular(17),
   bottomRight: Radius.circular(17),
 );
+const kBoxFullRadius = BorderRadius.all(Radius.circular(17));
 const kBoxRadiusVerticalRight = BorderRadius.only(
   topRight: Radius.circular(17),
   bottomRight: Radius.circular(17),
