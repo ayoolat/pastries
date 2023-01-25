@@ -27,29 +27,31 @@ class RandomExplorationCard extends StatelessWidget {
       price: price,
       body: body,
       height: 188,
-      width: 155,
       button: SizedBox(
-        width: 25,
         height: 25,
-        child: TextButton(
-          onPressed: () {
-            print("");
-          },
-          style: ButtonStyle(
-            padding: MaterialStateProperty.all(EdgeInsets.zero),
-            fixedSize: MaterialStateProperty.all(
-              const Size(3, 4),
+        child: SizedBox(
+          height: 10,
+          width: 25,
+          child: TextButton(
+            onPressed: () {
+              print("");
+            },
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(EdgeInsets.zero),
+              fixedSize: MaterialStateProperty.all(
+                const Size(2, 4),
+              ),
+              backgroundColor: MaterialStateProperty.all(
+                AppColors.white,
+              ),
             ),
-            backgroundColor: MaterialStateProperty.all(
-              AppColors.white,
-            ),
-          ),
-          child: Align(
-            alignment: Alignment.center,
-            child: const Icon(
-              Icons.add,
-              color: AppColors.orange,
-              size: 20,
+            child: const Align(
+              alignment: Alignment.center,
+              child: Icon(
+                Icons.add,
+                color: AppColors.orange,
+                size: 18,
+              ),
             ),
           ),
         ),

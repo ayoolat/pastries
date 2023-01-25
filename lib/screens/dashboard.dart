@@ -211,47 +211,57 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 const SizedBox(
                   height: 20,
                 ),
-                Wrap(
-                  direction: Axis.horizontal,
-                  children: const [
-                    RandomExplorationCard(
-                      image: AppImages.dashboardImage1,
-                      heading: "Chocolate Berries Cake",
-                      price: "₦ 23,699",
-                      body:
-                          "A kick well chocolate cake for all with nice berries.",
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    RandomExplorationCard(
-                      image: AppImages.dashboardImage1,
-                      heading: "Chocolate Berries Cake",
-                      price: "₦ 23,699",
-                      body:
-                          "A kick well chocolate cake for all with nice berries.",
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    RandomExplorationCard(
-                      image: AppImages.dashboardImage1,
-                      heading: "Chocolate Berries Cake",
-                      price: "₦ 23,699",
-                      body:
-                          "A kick well chocolate cake for all with nice berries.",
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    RandomExplorationCard(
-                      image: AppImages.dashboardImage1,
-                      heading: "Chocolate Berries Cake",
-                      price: "₦ 23,699",
-                      body:
-                          "A kick well chocolate cake for all with nice berries.",
-                    ),
-                  ],
+                SizedBox(
+                  height: 200,
+                  child: ListView(
+                    children: [
+                      GridView.count(
+                        physics: const NeverScrollableScrollPhysics(),
+                        crossAxisCount: 1,
+                        crossAxisSpacing: 1,
+                        shrinkWrap: true,
+                        children: const [
+                          RandomExplorationCard(
+                            image: AppImages.dashboardImage1,
+                            heading: "Chocolate Berries Cake",
+                            price: "₦ 23,699",
+                            body:
+                                "A kick well chocolate cake for all with nice berries.",
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          RandomExplorationCard(
+                            image: AppImages.dashboardImage1,
+                            heading: "Chocolate Berries Cake",
+                            price: "₦ 23,699",
+                            body:
+                                "A kick well chocolate cake for all with nice berries.",
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          RandomExplorationCard(
+                            image: AppImages.dashboardImage1,
+                            heading: "Chocolate Berries Cake",
+                            price: "₦ 23,699",
+                            body:
+                                "A kick well chocolate cake for all with nice berries.",
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          RandomExplorationCard(
+                            image: AppImages.dashboardImage1,
+                            heading: "Chocolate Berries Cake",
+                            price: "₦ 23,699",
+                            body:
+                                "A kick well chocolate cake for all with nice berries.",
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
