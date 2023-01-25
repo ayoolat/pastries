@@ -76,7 +76,7 @@ class _CartScreenState extends State<CartScreen> {
                 height: 191,
                 width: double.infinity,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 25, horizontal: 10),
+                    const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
                 decoration: const BoxDecoration(
                     color: AppColors.lighterOrange,
                     borderRadius: kBoxFullRadius),
