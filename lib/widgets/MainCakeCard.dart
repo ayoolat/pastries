@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../routes.dart';
 import '../utils/config/colors.dart';
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
@@ -21,29 +22,34 @@ class MainCakeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CakeCardTemplate(
-      rightMargin: 20,
-      image: image,
-      heading: heading,
-      price: price,
-      body: body,
-      height: 199,
-      width: 210,
-      button: TextButton(
-        onPressed: () {
-          print("");
-        },
-        style: ButtonStyle(
-          fixedSize: MaterialStateProperty.all(
-            const Size(100, 10),
+    return GestureDetector(
+      onTap: () {
+        AppNavigator.push(Routes.View);
+      },
+      child: CakeCardTemplate(
+        rightMargin: 20,
+        image: image,
+        heading: heading,
+        price: price,
+        body: body,
+        height: 199,
+        width: 210,
+        button: TextButton(
+          onPressed: () {
+            print("");
+          },
+          style: ButtonStyle(
+            fixedSize: MaterialStateProperty.all(
+              const Size(100, 10),
+            ),
+            backgroundColor: MaterialStateProperty.all(
+              AppColors.white,
+            ),
           ),
-          backgroundColor: MaterialStateProperty.all(
-            AppColors.white,
+          child: const Text(
+            "Add to cart",
+            style: kCakeCardButton,
           ),
-        ),
-        child: const Text(
-          "Add to cart",
-          style: kCakeCardButton,
         ),
       ),
     );
