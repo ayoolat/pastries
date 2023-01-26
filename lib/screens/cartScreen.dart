@@ -6,6 +6,7 @@ import '../utils/config/colors.dart';
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
 import '../widgets/CartCardWidget.dart';
+import '../widgets/CartSummaryCard.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({Key? key}) : super(key: key);
@@ -142,41 +143,6 @@ class _CartScreenState extends State<CartScreen> {
       bottomNavigationBar: BottomNav(
         scrollController: _scrollController,
         selectedIndex: _selectedIndex,
-      ),
-    );
-  }
-}
-
-class CartSummaryCard extends StatelessWidget {
-  final String title;
-  final String value;
-  final TextStyle titleStyle;
-  final TextStyle valueStyle;
-
-  const CartSummaryCard({
-    required this.title,
-    required this.value,
-    required this.titleStyle,
-    required this.valueStyle,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 12),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            title,
-            style: titleStyle,
-          ),
-          Text(
-            value,
-            style: valueStyle,
-          )
-        ],
       ),
     );
   }
