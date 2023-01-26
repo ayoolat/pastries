@@ -79,6 +79,9 @@ class BottomNav extends StatelessWidget {
               case 3:
                 AppNavigator.push(Routes.Cart);
                 return;
+              case 4:
+                AppNavigator.push(Routes.Profile);
+                return;
             }
           },
         ),

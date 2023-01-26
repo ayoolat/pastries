@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:pastries/screens/ProfileScreen.dart';
+import 'package:pastries/screens/VeiwingScreen.dart';
 import 'package:pastries/screens/cartScreen.dart';
 import 'package:pastries/screens/categoriesScreen.dart';
 import 'package:pastries/screens/dashboard.dart';
@@ -18,7 +20,9 @@ enum Routes {
   Dashboard,
   Search,
   Categories,
-  Cart
+  Cart,
+  View,
+  Profile
 }
 
 class _Paths {
@@ -30,6 +34,8 @@ class _Paths {
   static const String search = '/search';
   static const String categories = '/categories';
   static const String cart = '/cart';
+  static const String view = '/view';
+  static const String profile = '/profile';
 
   static const Map<Routes, String> _pathMap = {
     Routes.OnBoard: onBoard,
@@ -40,6 +46,8 @@ class _Paths {
     Routes.Search: search,
     Routes.Categories: categories,
     Routes.Cart: cart,
+    Routes.View: view,
+    Routes.Profile: profile,
   };
 
   static String of(Routes route) => _pathMap[route] ?? onBoard;
@@ -66,6 +74,10 @@ class AppNavigator {
         return FadeRoute(page: const CategoriesScreen());
       case _Paths.cart:
         return FadeRoute(page: const CartScreen());
+      case _Paths.view:
+        return FadeRoute(page: const ViewingScreen());
+      case _Paths.profile:
+        return FadeRoute(page: const ProfileScreen());
       default:
         return FadeRoute(page: const OnBoardingScreen());
     }

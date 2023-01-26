@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 
+import '../routes.dart';
 import '../utils/config/colors.dart';
 
 class CategoriesNavigationText extends StatelessWidget {
