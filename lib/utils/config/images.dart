@@ -26,6 +26,8 @@ class AppImages {
   static const profileIcon = _Image('profileIcon.png');
   static const cartItem = _Image('cartItem.png');
   static const trashIcon = _Image('trashIcon.png');
+  static const singleCakeBGImage = _Image('singleCakeBGImage.png');
+  static const profileImage = _Image('profileImage.png');
 
   static Future precacheAssets(BuildContext context) async {
     await precacheImage(background, context);
@@ -43,5 +45,7 @@ class AppImages {
     await precacheImage(profileIcon, context);
     await precacheImage(cartItem, context);
     await precacheImage(trashIcon, context);
+    await precacheImage(singleCakeBGImage, context);
+    await precacheImage(profileImage, context);
   }
 }
