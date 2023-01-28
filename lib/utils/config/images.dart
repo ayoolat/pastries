@@ -28,6 +28,13 @@ class AppImages {
   static const trashIcon = _Image('trashIcon.png');
   static const singleCakeBGImage = _Image('singleCakeBGImage.png');
   static const profileImage = _Image('profileImage.png');
+  static const editProfileIcon = _Image('editProfileIcon.png');
+  static const logoutIcon = _Image('logoutIcon.png');
+  static const notificationIcon = _Image('notificationIcon.png');
+  static const orderHistoryIcon = _Image('orderHistoryIcon.png');
+  static const shoppingAdIcon = _Image('shoppingAdIcon.png');
+  static const settingsIcon = _Image('settingsIcon.png');
+  static const whiteIcon = _Image('whiteIcon.png');
 
   static Future precacheAssets(BuildContext context) async {
     await precacheImage(background, context);
@@ -47,5 +54,12 @@ class AppImages {
     await precacheImage(trashIcon, context);
     await precacheImage(singleCakeBGImage, context);
     await precacheImage(profileImage, context);
+    await precacheImage(editProfileIcon, context);
+    await precacheImage(logoutIcon, context);
+    await precacheImage(notificationIcon, context);
+    await precacheImage(orderHistoryIcon, context);
+    await precacheImage(shoppingAdIcon, context);
+    await precacheImage(settingsIcon, context);
+    await precacheImage(whiteIcon, context);
   }
 }

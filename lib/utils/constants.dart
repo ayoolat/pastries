@@ -75,6 +75,11 @@ const kCartCardBody = TextStyle(
   fontWeight: FontWeight.w300,
   fontSize: 10,
 );
+const kProfileItemTextStyle = TextStyle(
+  fontSize: 15,
+  fontWeight: FontWeight.w500,
+  color: AppColors.white,
+);
 BoxShadow kShadow = BoxShadow(
   color: Colors.black.withOpacity(0.15),
   spreadRadius: 3,
