@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pastries/routes.dart';
 import 'package:pastries/utils/config/colors.dart';
 import 'package:pastries/widgets/bottomNav.dart';
 
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
+import '../widgets/profileItem.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -33,124 +35,111 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.transparent,
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: kBackgroundImage(AppImages.singleCakeBGImage),
-        padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
-        child: ListView(
-          controller: _scrollController,
-          children: [
-            Row(
-              children: [
-                Container(
-                  height: 100,
-                  width: 103,
-                  margin: const EdgeInsets.only(right: 20),
-                  decoration: BoxDecoration(
-                    borderRadius: kBoxFullRadius,
-                    border: Border.all(
-                      color: AppColors.white,
-                      width: 2,
-                    ),
-                  ),
-                  child: const Image(
-                    image: AppImages.profileImage,
-                    fit: BoxFit.fill,
-                  ),
-                ),
-                Column(
-                  children: const [
-                    Text(
-                      "Toluwanimi Ayoola",
-                      style: TextStyle(
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.white),
-                    ),
-                    Text(
-                      "toluwanimiayola@gmail.com",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w300,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        controller: _scrollController,
+        child: Container(
+          height: MediaQuery.of(context).size.height + 150,
+          width: double.infinity,
+          decoration: kBackgroundImage(AppImages.singleCakeBGImage),
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 20),
+          child: ListView(
+            children: [
+              Row(
+                children: [
+                  Container(
+                    height: 100,
+                    width: 103,
+                    margin: const EdgeInsets.only(right: 20),
+                    decoration: BoxDecoration(
+                      borderRadius: kBoxFullRadius,
+                      image: const DecorationImage(
+                          image: AppImages.profileImage, fit: BoxFit.fill),
+                      border: Border.all(
                         color: AppColors.white,
+                        width: 2,
                       ),
                     ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            const KProfileItem(
-              image: AppImages.editProfileIcon,
-              text: "Edit Profile",
-            ),
-            const KProfileItem(
-              image: AppImages.shoppingAdIcon,
-              text: "Shopping Address",
-            ),
-            const KProfileItem(
-              image: AppImages.orderHistoryIcon,
-              text: "Order History",
-            ),
-            const KProfileItem(
-              image: AppImages.notificationIcon,
-              text: "Notification",
-            ),
-            const KProfileItem(
-              image: AppImages.settingsIcon,
-              text: "Settings",
-            ),
-            const KProfileItem(
-              image: AppImages.logoutIcon,
-              text: "Log Out",
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Align(
-              alignment: Alignment.topLeft,
-              child: Image(
-                image: AppImages.whiteIcon,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "Toluwanimi Ayoola",
+                        textDirection: TextDirection.ltr,
+                        textAlign: TextAlign.left,
+                        style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w600,
+                            color: AppColors.white,
+                            overflow: TextOverflow.ellipsis),
+                      ),
+                      Text(
+                        "toluwanimiayola@gmail.com",
+                        textAlign: TextAlign.left,
+                        textDirection: TextDirection.ltr,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w300,
+                          color: AppColors.white,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-            )
-          ],
+              const SizedBox(
+                height: 40,
+              ),
+              ProfileItem(
+                image: AppImages.editProfileIcon,
+                text: "Edit Profile",
+                ontap: () {},
+              ),
+              ProfileItem(
+                image: AppImages.shoppingAdIcon,
+                text: "Shopping Address",
+                ontap: () {},
+              ),
+              ProfileItem(
+                image: AppImages.orderHistoryIcon,
+                text: "Order History",
+                ontap: () {},
+              ),
+              ProfileItem(
+                image: AppImages.notificationIcon,
+                text: "Notification",
+                ontap: () {},
+              ),
+              ProfileItem(
+                image: AppImages.settingsIcon,
+                text: "Settings",
+                ontap: () {},
+              ),
+              ProfileItem(
+                image: AppImages.logoutIcon,
+                text: "Log Out",
+                ontap: () {
+                  AppNavigator.push(Routes.Login);
+                },
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Align(
+                alignment: Alignment.topLeft,
+                child: Image(
+                  image: AppImages.whiteIcon,
+                ),
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: BottomNav(
         scrollController: _scrollController,
         selectedIndex: _selectedIndex,
-      ),
-    );
-  }
-}
-
-class KProfileItem extends StatelessWidget {
-  final AssetImage image;
-  final String text;
-  const KProfileItem({
-    required this.image,
-    required this.text,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 30),
-      child: Row(
-        children: [
-          Container(
-            margin: const EdgeInsets.only(right: 20),
-            child: Image(image: image),
-          ),
-          Text(
-            text,
-            style: kProfileItemTextStyle,
-          )
-        ],
       ),
     );
   }
