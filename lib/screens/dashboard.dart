@@ -216,9 +216,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   child: ListView(
                     children: [
                       GridView.count(
-                        physics: const NeverScrollableScrollPhysics(),
-                        crossAxisCount: 1,
-                        crossAxisSpacing: 1,
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 20,
                         shrinkWrap: true,
                         children: const [
                           RandomExplorationCard(
@@ -228,9 +227,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             body:
                                 "A kick well chocolate cake for all with nice berries.",
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
                           RandomExplorationCard(
                             image: AppImages.dashboardImage1,
                             heading: "Chocolate Berries Cake",
@@ -238,18 +234,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
                             body:
                                 "A kick well chocolate cake for all with nice berries.",
                           ),
-                          SizedBox(
-                            width: 20,
-                          ),
                           RandomExplorationCard(
                             image: AppImages.dashboardImage1,
                             heading: "Chocolate Berries Cake",
                             price: "₦ 23,699",
                             body:
                                 "A kick well chocolate cake for all with nice berries.",
-                          ),
-                          SizedBox(
-                            width: 20,
                           ),
                           RandomExplorationCard(
                             image: AppImages.dashboardImage1,
