@@ -6,9 +6,11 @@ import '../utils/constants.dart';
 class AuthHeading extends StatelessWidget {
   final List<Widget> children;
   final double heightFactor;
-  const AuthHeading(
-      {Key? key, required this.children, required this.heightFactor})
-      : super(key: key);
+  const AuthHeading({
+    Key? key,
+    required this.children,
+    required this.heightFactor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
