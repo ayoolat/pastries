@@ -35,6 +35,11 @@ class AppImages {
   static const shoppingAdIcon = _Image('shoppingAdIcon.png');
   static const settingsIcon = _Image('settingsIcon.png');
   static const whiteIcon = _Image('whiteIcon.png');
+  static const sliderIcon = _Image('sliderIcon.png');
+  static const priceIcon = _Image('priceIcon.png');
+  static const ingredientsIcon = _Image('ingredientsIcon.png');
+  static const titleIcon = _Image('titleIcon.png');
+  static const descriptionIcon = _Image('descriptionIcon.png');
 
   static Future precacheAssets(BuildContext context) async {
     await precacheImage(background, context);
@@ -61,5 +66,10 @@ class AppImages {
     await precacheImage(shoppingAdIcon, context);
     await precacheImage(settingsIcon, context);
     await precacheImage(whiteIcon, context);
+    await precacheImage(sliderIcon, context);
+    await precacheImage(priceIcon, context);
+    await precacheImage(ingredientsIcon, context);
+    await precacheImage(titleIcon, context);
+    await precacheImage(descriptionIcon, context);
   }
 }

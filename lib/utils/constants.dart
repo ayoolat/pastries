@@ -23,6 +23,13 @@ const kTotalSize = TextStyle(
   fontSize: 17,
   fontWeight: FontWeight.w600,
 );
+const kSingleTitle = TextStyle(fontSize: 22, fontWeight: FontWeight.w600);
+const kSingleDescription = TextStyle(
+  fontSize: 13,
+  fontWeight: FontWeight.w300,
+  overflow: TextOverflow.ellipsis,
+);
+const kSinglePrice = TextStyle(fontSize: 13, fontWeight: FontWeight.w600);
 const kAuthMainHeadingTextStyle = TextStyle(
   fontSize: 32,
   fontWeight: FontWeight.w800,
