@@ -28,11 +28,12 @@ class MainCakeCard extends StatelessWidget {
       },
       child: CakeCardTemplate(
         rightMargin: 20,
+        bottomMargin: 20,
         image: image,
         heading: heading,
         price: price,
         body: body,
-        height: 199,
+        height: 283,
         width: 210,
         button: TextButton(
           onPressed: () {
