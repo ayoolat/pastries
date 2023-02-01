@@ -58,12 +58,14 @@ class _ViewingScreenState extends State<ViewingScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SingleCakeDetails(
+                      alignment: CrossAxisAlignment.center,
                       text: "Presidency Cakesy",
                       style: kSingleTitle,
                       icon: AppImages.titleIcon,
                     ),
                     SizedBox(
                       child: SingleCakeDetails(
+                        alignment: CrossAxisAlignment.start,
                         text:
                             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
                         style: kSingleDescription,
@@ -73,11 +75,13 @@ class _ViewingScreenState extends State<ViewingScreen> {
                       ),
                     ),
                     SingleCakeDetails(
+                      alignment: CrossAxisAlignment.center,
                       text: "Gluclose, Sugar, Ginger, Butter e.t.c",
                       style: kSingleDescription,
                       icon: AppImages.ingredientsIcon,
                     ),
                     SingleCakeDetails(
+                      alignment: CrossAxisAlignment.center,
                       text: "N32,650",
                       style: kSinglePrice,
                       icon: AppImages.priceIcon,
@@ -121,18 +125,21 @@ class SingleCakeDetails extends StatelessWidget {
   bool? softWrap;
   final AssetImage icon;
   int? maxlines;
+  final CrossAxisAlignment alignment;
   SingleCakeDetails(
       {Key? key,
       required this.text,
       required this.style,
       this.softWrap,
       required this.icon,
+      required this.alignment,
       this.maxlines})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: alignment,
       children: [
         Container(
           margin: const EdgeInsets.only(right: 20),
@@ -140,11 +147,13 @@ class SingleCakeDetails extends StatelessWidget {
             image: icon,
           ),
         ),
-        Text(
-          text,
-          style: style,
-          softWrap: softWrap,
-          maxLines: maxlines,
+        Flexible(
+          child: Text(
+            text,
+            style: style,
+            softWrap: softWrap,
+            maxLines: maxlines,
+          ),
         ),
       ],
     );
