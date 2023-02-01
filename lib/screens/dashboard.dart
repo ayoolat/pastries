@@ -212,12 +212,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   height: 20,
                 ),
                 SizedBox(
-                  height: 200,
+                  height: 400,
                   child: ListView(
                     children: [
                       GridView.count(
                         crossAxisCount: 2,
                         crossAxisSpacing: 20,
+                        mainAxisSpacing: 20,
                         shrinkWrap: true,
                         children: const [
                           RandomExplorationCard(

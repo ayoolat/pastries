@@ -13,6 +13,7 @@ class CakeCardTemplate extends StatelessWidget {
   final String price;
   final String body;
   double rightMargin = 0;
+  double bottomMargin = 0;
   CakeCardTemplate({
     Key? key,
     required this.image,
@@ -23,12 +24,13 @@ class CakeCardTemplate extends StatelessWidget {
     required this.height,
     required this.button,
     required this.rightMargin,
+    required this.bottomMargin,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: rightMargin, bottom: 20.0),
+      margin: EdgeInsets.only(right: rightMargin, bottom: bottomMargin),
       height: height,
       width: width,
       decoration: BoxDecoration(

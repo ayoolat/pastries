@@ -22,11 +22,12 @@ class RandomExplorationCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return CakeCardTemplate(
       rightMargin: 0,
+      bottomMargin: 0,
       image: image,
       heading: heading,
       price: price,
       body: body,
-      height: 188,
+      height: 210,
       button: SizedBox(
         height: 25,
         child: SizedBox(
