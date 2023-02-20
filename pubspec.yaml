@@ -20,6 +20,8 @@ dependencies:
   scroll_to_hide_bottom_navigation_bar: ^0.0.1
   flutter_svg: ^1.1.5
   extended_wrap: ^0.1.5
+  flash: ^2.0.5
+  toast: ^0.2.9
 
 dev_dependencies:
   flutter_test:

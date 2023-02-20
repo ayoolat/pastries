@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pastries/utils/config/colors.dart';
+import 'package:toast/toast.dart';
 
 import '../utils/config/images.dart';
 import '../utils/constants.dart';
@@ -15,6 +16,7 @@ class ViewingScreen extends StatefulWidget {
 class _ViewingScreenState extends State<ViewingScreen> {
   @override
   Widget build(BuildContext context) {
+    ToastContext().init(context);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -93,7 +95,8 @@ class _ViewingScreenState extends State<ViewingScreen> {
                       width: double.infinity,
                       child: TextButton(
                         onPressed: () {
-                          print("");
+                          Toast.show("Cake added to cart",
+                              duration: Toast.lengthShort, gravity: Toast.top);
                         },
                         style: const ButtonStyle(
                           backgroundColor:
